@@ -1,0 +1,95 @@
+﻿In Mongo Compass:
+{l_name: /^Shak/ }
+like shak%
+
+{l_name: /Shak/ }
+like %shak%
+
+{ $or: [ {f_name: /^Am/ },{l_name: "Shaked" } ] }
+or f_name like Am% or l_name = "Shaked" 
+
+
+ {f_name: /^אמ/ , l_name: "Shaked" } 
+f_name like אמ% and l_name = "Shaked"
+
+
+Filter (=the query):{ "b_date": {$gt: new Date ('1968-06-22')} }
+project (=fields in the select):{l_name:1 ,f_name:1}
+sort: {f_name:1}
+
+select l_name ,f_name
+from Amir_Collection
+where b_date> ('1968-06-20')
+
+------------------------
+In Mongo Shell:
+use Test
+db.Amir_Collection.insertOne({ f_name: "Liad", l_name: "Shaked" } );
+
+
+++++++++++++++++++++++++++
+https://docs.mongodb.com/manual/tutorial/insert-documents/
+use myNewDatabase 
+db.myCollection.insertOne( { x: 1 } );
++++++++++++++++++++++++++
+use myNewDatabase
+db.myCollection.insertMany([
+   { item: "journal", qty: 25, tags: ["blank", "red"], size: { h: 14, w: 21, uom: "cm" } },
+   { item: "mat", qty: 85, tags: ["gray"], size: { h: 27.9, w: 35.5, uom: "cm" } },
+   { item: "mousepad", qty: 25, tags: ["gel", "blue"], size: { h: 19, w: 22.85, uom: "cm" } }
+]);
+++++++++++++++++++++++
+https://docs.mongodb.com/manual/tutorial/query-documents/
+use Test
+db.Amir_Collection.find( { l_name: "Shaked" } )
+
+db.Amir_Collection.find( { f_name: { $in: [ "Liad", "מיכל" ] } } )
+
+db.Amir_Collection.find( { f_name: "Liad", l_name: "Shaked" } )
+
+db.Amir_Collection.find({ $or: [  { f_name: "Liad"}, { l_name: "Shaked" } ] } )
+
+db.Amir_Collection.find( { l_name: /^Sh/ } )
+
+
+++++++++++++++++++++++Using Python
+#https://stackoverflow.com/questions/45546293/pymongo-3-4-0-connecting-to-mongo-atlas
+
+from pymongo import MongoClient
+from random import randint
+
+#include pprint for readabillity of the 
+from pprint import pprint
+
+client = MongoClient("mongodb://amir:shaked@cluster0-shard-00-00-bfsi1.mongodb.net:27017,cluster0-shard-00-01-bfsi1.mongodb.net:27017,cluster0-shard-00-02-bfsi1.mongodb.net:27017/DATABASE?ssl=true&authSource=admin")
+
+
+db = client.Test
+
+
++++++++++++++++++++++++++++
+insert example
+result=db.Amir_Collection.insert_one({ 'f_name': 'Yarden', 'l_name': 'Shaked' } )
+
++++++++++++++++++++++search example
+search = db.Amir_Collection.find_one({'l_name': "Shaked"})
+print(search)
+
+search = db.Amir_Collection.find({'l_name': "Shaked"}).count()
+print(search)
+++++++++++++++++++++++++++++++++++++++++++++++++++
+A more complex example:
+#https://www.mongodb.com/blog/post/getting-started-with-python-and-mongodb
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#find all example - https://www.w3schools.com/python/python_mongodb_find.asp
+    for x in db.Amir_Collection.find({'l_name': "Shaked"}):
+          print(x)
+++++++++++++++++++++++++++++++++++++++++++++++++++
+#delete example
+veofre the delete (after the delete - nothing will be found)
+for x in db.reviews.find({'cuisine': "Bar Food"}):
+  pprint(x)
+
+
+result = db.reviews.delete_many({'cuisine': "Bar Food"})
+print('deleted documents by requested criteria')

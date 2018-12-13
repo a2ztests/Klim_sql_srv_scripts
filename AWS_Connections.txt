@@ -1,0 +1,48 @@
+
+talend :
+jdbc:jtds:sqlserver://localhost:1433;integratedSecurity=true
+SQL Server Configuration Manager - explained:
+https://docs.microsoft.com/en-us/sql/relational-databases/sql-server-configuration-manager?view=sql-server-2017
+File to run:
+C:\Windows\SysWOW64\SQLServerManager14.msc
+
+services (in search)->sqlserver(mssqlserver)->restart
+
+tMSSQLRow  component
+https://www.talend.com/resources/reading-a-file/
+https://info.talend.com/rs/talend/images/CB_EN_DI_Cookbook_DataIntegration.pdf?_ga=2.218338399.759919375.1541069643-1492099280.1541069643
+
+minicrm:
+Using "my computer" on Amazon
+https://172.172.72.5:8443/minicrm
+
+moh-res-admin
+Qwerty123
+
+All servers IP begin with:
+172.172.72
+
+Tomcat = Web server
+72.51
+
+IPV (IPV1 +IPV2)
+72.111
+
+Optim
+72.46
+
+DMS = CRM
+?
+
+Sql-srv
+?
+
+Entery to the Optim:
+U: s_did_service (or s_deid_service)
+P:Aa123456
+
+
+Talend-Studio:
+https://emea01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fwww.opensourceetl.net%2Ftis%2Ftdf_641%2FTalend-Installer-Starter-20170623_1246-V6.4.1-installer.zip&data=02%7C01%7Cyarivsc%40matrixbi.co.il%7Cb8ae049f022b4f99837908d579e6c643%7C8b3747c3cccd4b178f18bd610edc86e6%7C0%7C0%7C636548954460067279&sdata=DO8GhkgCHD9SPILikTA7zMKTs3mA0YRPfQS9EDTA5uo%3D&reserved=0
+U: costin
+P: moon7ieShe
