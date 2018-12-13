@@ -1,0 +1,111 @@
+create table hospitalizations_visit (
+admit_move nvarchar(200),
+avrofilename nvarchar(200), 
+avroschemacha1 nvarchar(200), 
+avroschemafilename nvarchar(200),
+birth_country nvarchar(200), 
+  birth_weight nvarchar(200), 
+  birthday nvarchar(200), --why not datetime?
+  city_code nvarchar(200), --why not int?
+  createtimelong bigint, 
+  death_dignose nvarchar(200), 
+  discharge_date nvarchar(200), --why not datetime? 
+  discharge_type nvarchar(200), 
+  family_status nvarchar(200), 
+  father_birth_country nvarchar(200), 
+  filesize bigint, 
+  gender nvarchar(200), 
+  hmo nvarchar(200), 
+  hospital_department nvarchar(200), 
+  hospitalisation_date nvarchar(200), --why not datetime? 
+  hospitalisation_type nvarchar(200), 
+  idcard_type nvarchar(200), 
+  i_identity nvarchar(200), 
+  immigration_year nvarchar(200), --why not int?
+  institute_code nvarchar(200), 
+  mother_birth_country nvarchar(200), 
+  namespace nvarchar(200), 
+  n_national nvarchar(200), 
+  no_hospitalization nvarchar(200), 
+  pregant_age nvarchar(200), --why not int?
+  record_type nvarchar(200), 
+  religin nvarchar(200), 
+  sessionid nvarchar(200), 
+  visit_number nvarchar(200), 
+  visit_number_parallel nvarchar(200), 
+  visit_reason nvarchar(200) )
+  
+
+++++++++++++++++
+create  table hosp_chronic_diagnosis (
+avrofilename  nvarchar(200),
+  avroschemacha1 nvarchar(200), 
+  avroschemafilename nvarchar(200), 
+  createtimelong bigint, 
+  diagnose_code nvarchar(200), 
+  diagnose_type nvarchar(200), 
+  filesize bigint,
+  institute_code nvarchar(200), 
+  namespace nvarchar(200), 
+  no_hospitalization nvarchar(200), 
+  record_type nvarchar(200), 
+  sessionid nvarchar(200))
+  
+++++++++++++++++
+create table hosp_financier (
+amount nvarchar(200), 
+avrofilename nvarchar(200), 
+avroschemacha1 nvarchar(200), 
+avroschemafilename nvarchar(200), 
+benefactor nvarchar(200), 
+billing_amount nvarchar(200), 
+createtimelong bigint, 
+department_code nvarchar(200), 
+filesize bigint, 
+hospitalization_rate nvarchar(200), 
+institute_code nvarchar(200), 
+n_namespace nvarchar(200), 
+no_hospitalization nvarchar(200), 
+obligation nvarchar(200), 
+record_type nvarchar(200), 
+sessionid  nvarchar(200))
+
+++++++++++++++++
+create  table hosp_ward_main_dgop (
+admit_department_clock nvarchar(200), 
+admit_department_date nvarchar(200), 
+  avrofilename nvarchar(200), 
+  avroschemacha1 nvarchar(200), 
+  avroschemafilename nvarchar(200), 
+  createtimelong bigint, 
+  department_code nvarchar(200), 
+  discharge_department_clock nvarchar(200), 
+  discharge_department_date nvarchar(200), 
+  filesize bigint, 
+  first_operation_date nvarchar(200), 
+  institute_code nvarchar(200), 
+  main_diagnose nvarchar(200), 
+  main_operation nvarchar(200), 
+  namespace nvarchar(200), 
+  no_hospitalization nvarchar(200), 
+  record_type nvarchar(200), 
+  sessionid nvarchar(200))
+
+
+++++++++++++++++
+create table hosp_ward_secondary_dgop (
+avrofilename nvarchar(200), 
+  avroschemacha1 nvarchar(200), 
+  avroschemafilename nvarchar(200), 
+  createtimelong bigint, 
+  department_code nvarchar(200), 
+  filesize bigint, 
+    namespace nvarchar(200), 
+  no_hospitalization nvarchar(200), 
+  record_type nvarchar(200), 
+  secondary_diagnoseoperation nvarchar(200), 
+sessionid nvarchar(200))
+
+
+
+++++++++++++++++

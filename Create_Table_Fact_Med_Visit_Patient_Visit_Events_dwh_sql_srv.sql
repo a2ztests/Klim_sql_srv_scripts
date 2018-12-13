@@ -1,0 +1,80 @@
+
+USE [klimodo]
+GO
+
+/****** Object:  Table [dbo].[Fact_Med_Visit_Patient_Visit_Events]    Script Date: 21/11/2018 11:56:11 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Fact_Med_Visit_Patient_Visit_Events](
+[med_visit_GK] [int] NULL,
+[original_visit_number] [nvarchar](15) NULL,
+[department_entry_date] [int] NULL,
+[department_entry_time] [int] NOT NULL,
+[department_exit_date] [int] NULL,
+[department_exit_time] [int] NOT NULL,
+[visit_start_date] [int] NULL,
+[visit_end_date] [int] NULL,
+[institute_GK] [int] NOT NULL,
+[institute_MBR_code] [nvarchar](5) NOT NULL,
+[patient_type_GK] [int] NULL,
+[patient_type_code] [nvarchar](4) NOT NULL,
+[patient_type_group_code] [nvarchar](4) NOT NULL,
+[patient_GK] [int] NULL,
+[patient_ID] [varbinary](32) NOT NULL,
+[patient_ID_type] [nvarchar](1) NULL,
+[patient_age] [int] NULL,
+[patient_age_GK] [int] NULL,
+[city_GK] [int] NULL,
+[city_code] [int] NULL,
+[patient_visit_reason_GK] [int] NULL,
+[patient_visit_reason_code] [nvarchar](4) NULL,
+[patient_visit_reason_sub_group_code] [nvarchar](4) NOT NULL,
+[patient_referrer_GK] [int] NULL,
+[patient_referrer_code] [int] NOT NULL,
+[insurer_GK] [int] NULL,
+[insurer_code] [nvarchar](4) NULL,
+[paying_entity_GK] [int] NULL,
+[paying_entity_code] [nvarchar](4) NULL,
+[patient_visit_type_GK] [int] NOT NULL,
+[patient_visit_type_code] [nvarchar](4) NOT NULL,
+[patient_release_type_GK] [int] NOT NULL,
+[patient_release_type_code] [nvarchar](4) NOT NULL,
+[patient_release_type_group_code] [nvarchar](4) NOT NULL,
+[patient_hospitalizing_department_GK] [int] NULL,
+[patient_hospitalizing_department_code] [nvarchar](5) NULL,
+[transferred_to_dept_GK] [int] NULL,
+[transferred_to_dept_code] [nvarchar](5) NULL,
+[is_last_department] [int] NULL,
+[department_enumerator] [int] NULL,
+[destination_GK] [int] NULL,
+[destination_code] [nvarchar](5) NULL,
+[first_diagnosis] [nvarchar](8) NULL,
+[first_operation] [nvarchar](8) NULL,
+[first_operation_date] [nvarchar](8) NULL,
+[death_diagnosis_code] [nvarchar](8) NOT NULL,
+[total_vacation_days] [int] NULL,
+[stay_hosp_days] [int] NULL,
+[stay_ER_minutes] [int] NULL,
+[total_hospitalization_days] [int] NULL,
+[ER_Visit_Groups_Code] [int] NULL,
+[ER_Visit_Groups_GK] [int] NULL,
+[gestational_week_code] [nvarchar](4) NOT NULL,
+[birth_weight] [int] NULL,
+[diag_ratio_visit] [float] NULL,
+[diag_ratio_dept] [float] NULL,
+[diag_ratio_last_dept] [float] NULL,
+[diag_ratio_visit_denominator] [float] NULL,
+[diag_ratio_dept_denominator] [float] NULL,
+[diag_ratio_last_dept_denominator] [float] NULL,
+[ETL_insert_date_time] [datetime] NULL,
+[source_type_GK] [int] NULL,
+[source_type_code] [int] NOT NULL,
+[ETL_process_code] [nvarchar](255) NULL,
+[ETL_update_date_time] [datetime] NULL,
+[delete_date_time] [datetime] NULL
+) ON [PRIMARY]
+GO
